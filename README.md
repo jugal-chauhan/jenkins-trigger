@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Jenkins Job Trigger and Monitor
-        uses: jugal-chauhan/jenkins-trigger@1.0.5
+        uses: jugal-chauhan/jenkins-trigger@1.0.6
         with:
           jenkins_url: 'https://test-jenkins-url'
           job_name: 'test-job'
