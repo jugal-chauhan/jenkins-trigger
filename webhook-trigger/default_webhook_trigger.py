@@ -176,7 +176,7 @@ def main():
     parser.add_argument("--job_name", type=str, help="The job name to trigger in Jenkins")
     parser.add_argument('--job_params', type=parse_key_value_pairs, required=False,
                         help='Job parameters, separated by a comma, to provide to a Jenkins workflow, e.g. '
-                             '"GIT_REPO_URL=https://github.com/lewijacn/opensearch-migrations.git,GIT_BRANCH=main". '
+                             '"GIT_REPO_URL=https://github.com/jugal-chauhan/opensearch-migrations.git,GIT_BRANCH=main". '
                              'Job name will automatically be added as a parameter')
     parser.add_argument("--job_timeout_minutes", default=60, type=int,
                         help="Max time (minutes) this Github Action will wait for completion. Default is 60 minutes")
