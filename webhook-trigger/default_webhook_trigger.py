@@ -41,7 +41,12 @@ def wait_for_job_completion(jenkins_url: str, trigger_job_response_body: dict, j
     workflow_url = None
 
     # Parse Jenkins request and get the queue URL
-    queue_url = trigger_job_response_body.get("jobs", {}).get(job_name, {}).get("url", None)
+    queue_url = None
+    for key, job_info in trigger_job_response_body.get("jobs", {}).items():
+        if job_info.get("triggered") is True:
+            queue_url = job_info.get("url") or None
+            break
+
     logging.info(f"Detected jenkins queue_url: {queue_url}")
     if not queue_url:
         raise RuntimeError(f"Unable to determine queue_url for job: {job_name}")
